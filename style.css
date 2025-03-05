@@ -161,6 +161,19 @@ nav a.active {
     z-index: 1001;
 }
 
+.language-selector a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.language-selector a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 .language-flag {
     width: 32px;
     height: 32px;
