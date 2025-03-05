@@ -1,0 +1,256 @@
+/* 基础样式 */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Serif SC', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 主页容器 */
+.home-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+/* 主标题 */
+.main-title {
+    font-size: 10rem;
+    color: #6b4423;
+    margin: 0 auto;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+    font-family: 'Noto Serif SC', serif;
+    letter-spacing: 0.1em;
+}
+
+/* 底部标签 */
+.bottom-links {
+    margin-top: auto;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.bottom-link {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid #e74c3c;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.bottom-link:hover {
+    background-color: #e74c3c;
+    color: #1a1a1a;
+}
+
+/* 导航栏 */
+nav {
+    background-color: #000;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 1rem;
+}
+
+nav a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #e74c3c;
+}
+
+/* 通用容器样式 */
+.container, .about-container, .faq-container, .contact-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* 媒体容器 */
+.media-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* 图片和视频样式 */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem 0;
+    border-radius: 4px;
+}
+
+/* 位置指引图片 */
+.map-images img {
+    width: 33.33%;
+    margin: 10px 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .media-container {
+        grid-template-columns: 1fr;
+    }
+
+    .map-images img {
+        width: 100%;
+    }
+}
+
+/* 滚动动画 */
+section {
+    scroll-margin-top: 80px;
+}
+
+/* 当前页面高亮 */
+nav a.active {
+    color: #e74c3c;
+    border-bottom: 2px solid #e74c3c;
+}
+
+/* 语言选择器 */
+.language-selector {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 1001;
+}
+
+.language-flag {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.language-flag:hover {
+    transform: scale(1.1);
+    border-color: #e74c3c;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .language-selector {
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+    
+    .language-flag {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* 剑道动画 */
+.kendo-animation {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background-color: #34495e;
+}
+
+.sword {
+    position: absolute;
+    width: 2px;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, #fff, transparent);
+    animation: sword-slash 2s infinite ease-in-out;
+}
+
+.sword:nth-child(1) {
+    left: 30%;
+    animation-delay: 0s;
+}
+
+.sword:nth-child(2) {
+    left: 70%;
+    animation-delay: 1s;
+}
+
+@keyframes sword-slash {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(45deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* 标题样式 */
+h1 {
+    color: #6b4423;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-family: 'Noto Serif SC', serif;
+}
+
+h2 {
+    color: #34495e;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #34495e;
+    color: white;
+}
